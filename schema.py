@@ -1,11 +1,10 @@
 #!/usr/bin/ python3
-from graphene_django import graphene
-
+import graphene
 
 class Query(graphene.ObjectType):
-    def __init__(self):
-        self.name = "hello"
-        self.type = str
-
-    def __str__(self):
-        return f"Hello, GraphQL!"
+        hello = graphene.String()
+        
+        def resolve_hello(root, info):
+              return "Hello, GraphQL!"
+    
+schema = graphene.Schema(query=Query)
