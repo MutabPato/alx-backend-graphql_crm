@@ -1,6 +1,7 @@
 #!/usr/bin/ python3
 import graphene
 
+# class Query(CRMQuery, graphene.ObjectType)
 class Query(graphene.ObjectType):
         hello = graphene.String()
         
